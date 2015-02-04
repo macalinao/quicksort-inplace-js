@@ -13,9 +13,7 @@ var quicksort = module.exports = function(arr, comparator, min, max) {
     max = arr.length - 1;
   }
 
-  if (max - min <= 1) return arr;
-
-  var pivot = arr[Math.floor(min + (max - min) / 2)];
+  var pivot = arr[min];
   var left = min;
   var right = max;
 
@@ -37,7 +35,7 @@ var quicksort = module.exports = function(arr, comparator, min, max) {
     }
   }
 
-  quicksort(arr, comparator, min, right);
-  quicksort(arr, comparator, left, max);
+  if (min < right) quicksort(arr, comparator, min, right);
+  if (max > left) quicksort(arr, comparator, left, max);
   return arr;
 };
