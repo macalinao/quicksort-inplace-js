@@ -5,13 +5,8 @@ var quicksort = module.exports = function(arr, comparator, min, max) {
     };
   }
 
-  if (!min) {
-    min = 0;
-  }
-
-  if (!max) {
-    max = arr.length - 1;
-  }
+  if (!min) min = 0;
+  if (!max) max = arr.length - 1;
 
   var pivot = arr[min];
   var left = min;
